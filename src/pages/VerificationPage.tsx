@@ -60,10 +60,10 @@ const VerificationPage: React.FC = () => {
         
         <div className="panel-heading" style={{ backgroundColor: '#f5f5f5', borderBottom: '1px solid #ddd', padding: '10px 15px' }}>
           <div className="row">
-            <div className="col-sm-3 col-xs-12 logo-col">
+            <div className="col-sm-3 col-xs-6">
               <img src="/logo.png" alt="Logo" style={{ width: '120px' }} />
             </div>
-            <div className="col-sm-9 col-xs-12 text-right header-text-col">
+            <div className="col-sm-9 col-xs-12 text-right">
               <h4 style={{ fontSize: '16px', marginBottom: '15px', marginTop: '5px', color: '#333', fontWeight: 'normal' }}>Certificate Verification</h4>
               <h3 style={{ fontSize: '24px', margin: '0', color: '#333' }}>{certificate.certificateNumber}</h3>
             </div>

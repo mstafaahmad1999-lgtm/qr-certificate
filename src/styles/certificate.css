@@ -46,21 +46,9 @@ body {
     padding-right: 10px !important;
   }
   
-  .logo-col {
-    text-align: center !important;
-    margin-bottom: 20px;
-  }
-  
-  .header-text-col h4 {
-    margin-top: 15px !important;
-  }
-  
   /* Force exact ratio for the Info Table so word wrapping perfectly matches */
-  .mobile-label-col { width: 35% !important; }
-  .mobile-value-col { width: 65% !important; }
-  
-  .goods-desc-col { width: 65% !important; }
-  .goods-qty-col { width: 35% !important; }
+  .mobile-label-col { width: 32% !important; }
+  .mobile-value-col { width: 68% !important; }
 }
 
 
