@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 
 const AdminPage: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -74,8 +74,8 @@ const AdminPage: React.FC = () => {
           </div>
         </div>
 
-        <div className="panel panel-default">
-          <div className="panel-heading">
+        <div className="panel panel-default" style={{ border: 'none', boxShadow: 'none' }}>
+          <div className="panel-heading" style={{ backgroundColor: '#fff', border: 'none' }}>
             <div className="row">
               <div className="col-sm-3">
                 <img src="/logo.png" alt="Logo" style={{ width: '140px' }} />
@@ -83,25 +83,25 @@ const AdminPage: React.FC = () => {
               <div className="col-sm-9 text-right">
                 <h4>Certificate Verification</h4>
                 <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
-                  <input type="text" className="admin-input text-right" style={{ fontSize: '24px', fontWeight: 'bold', width: '250px' }} value={certNumber} onChange={e => setCertNumber(e.target.value)} />
+                  <input type="text" className="admin-input text-right" style={{ fontSize: '24px', fontWeight: 'bold', width: '250px', background: 'transparent', border: 'none' }} value={certNumber} onChange={e => setCertNumber(e.target.value)} />
                 </div>
               </div>
             </div>
           </div>
           <div className="panel-body">
             
-            <table className="table table-bordered table-condensed" role="table">
+            <table className="table table-bordered table-condensed" role="table" style={{ marginBottom: '20px' }}>
               <thead>
                 <tr>
-                  <th colSpan={2}>
-                    <h4 style={{ margin: '10px 0', fontSize: '18px', fontWeight: '400' }}>BASIC INFORMATION OF CERTIFICATE</h4>
+                  <th colSpan={2} style={{ backgroundColor: '#f9f9f9', padding: '10px 8px', fontSize: '15px', fontWeight: 'normal', color: '#333' }}>
+                    BASIC INFORMATION OF CERTIFICATE
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td className="mobile-label-col">
-                    <b>Exporter Name</b>
+                    Exporter Name
                     <span className="pull-right label label-info">1</span>
                   </td>
                   <td className="mobile-value-col">
@@ -110,7 +110,7 @@ const AdminPage: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="mobile-label-col">
-                    <b>Exporter Address</b>
+                    Exporter Address
                     <span className="pull-right label label-info">1</span>
                   </td>
                   <td className="mobile-value-col">
@@ -119,7 +119,7 @@ const AdminPage: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="mobile-label-col">
-                    <b>Consignee Name</b>
+                    Consignee Name
                     <span className="pull-right label label-info">2</span>
                   </td>
                   <td className="mobile-value-col">
@@ -128,7 +128,7 @@ const AdminPage: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="mobile-label-col">
-                    <b>Consignee Address</b>
+                    Consignee Address
                     <span className="pull-right label label-info">2</span>
                   </td>
                   <td className="mobile-value-col">
@@ -137,7 +137,7 @@ const AdminPage: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="mobile-label-col">
-                    <b>Consignee Country</b>
+                    Consignee Country
                     <span className="pull-right label label-info">2</span>
                   </td>
                   <td className="mobile-value-col">
@@ -146,7 +146,7 @@ const AdminPage: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="mobile-label-col">
-                    <b>Transport Details</b>
+                    Transport Details
                     <span className="pull-right label label-info">4</span>
                   </td>
                   <td className="mobile-value-col">
@@ -155,7 +155,7 @@ const AdminPage: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="mobile-label-col">
-                    <b>Country of Origin</b>
+                    Country of Origin
                     <span className="pull-right label label-info">3</span>
                   </td>
                   <td className="mobile-value-col">
@@ -164,7 +164,7 @@ const AdminPage: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="mobile-label-col">
-                    <b>Place and Date of Issue</b>
+                    Place and Date of Issue
                     <div className="text-right" style={{ marginTop: '4px' }}>
                       <span className="label label-info">8</span>
                     </div>
@@ -176,22 +176,22 @@ const AdminPage: React.FC = () => {
               </tbody>
             </table>
 
-            <table className="table table-bordered table-condensed" role="table" style={{ marginTop: '20px' }}>
+            <table className="table table-bordered table-condensed" role="table">
               <thead>
                 <tr>
-                  <th colSpan={2}>
-                    <h4 style={{ margin: '10px 0', fontSize: '18px', fontWeight: '400' }}>DESCRIPTION OF GOODS</h4>
+                  <th colSpan={2} style={{ backgroundColor: '#f9f9f9', padding: '10px 8px', fontSize: '15px', fontWeight: 'normal', color: '#333' }}>
+                    DESCRIPTION OF GOODS
                   </th>
                 </tr>
               </thead>
               <tbody>
-                <tr style={{ backgroundColor: '#F9F9F9' }}>
+                <tr style={{ backgroundColor: '#ffffff' }}>
                   <td>
-                    <b>Marks, numbers, number and kind of packages, description of goods</b>
+                    Marks, numbers, number and kind of packages, description of goods
                     <span className="pull-right label label-info">6</span>
                   </td>
                   <td>
-                    <b>Quantity</b>
+                    Quantity
                     <span className="pull-right label label-info">7</span>
                   </td>
                 </tr>
