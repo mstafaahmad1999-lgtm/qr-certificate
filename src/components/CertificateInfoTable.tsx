@@ -1,54 +1,11 @@
-import React from "react";
+﻿import React from "react";
 import type { Certificate } from "../data/certificates";
 
-interface CertificateInfoTableProps {
+interface Props {
   certificate: Certificate;
 }
 
-interface FieldRow {
-  marker: number;
-  label: string;
-  value: string;
-}
-
-const CertificateInfoTable: React.FC<CertificateInfoTableProps> = ({
-  certificate,
-}) => {
-  const fields: FieldRow[] = [
-    { marker: 1, label: "Exporter Name", value: certificate.exporterName },
-    {
-      marker: 1,
-      label: "Exporter Address",
-      value: certificate.exporterAddress,
-    },
-    { marker: 2, label: "Consignee Name", value: certificate.consigneeName },
-    {
-      marker: 2,
-      label: "Consignee Address",
-      value: certificate.consigneeAddress,
-    },
-    {
-      marker: 2,
-      label: "Consignee Country",
-      value: certificate.consigneeCountry,
-    },
-    {
-      marker: 4,
-      label: "Transport Details",
-      value: certificate.transportDetails,
-    },
-    {
-      marker: 3,
-      label: "Country of Origin",
-      value: certificate.countryOfOrigin,
-    },
-    {
-      marker: 8,
-      label: "Place and Date of Issue",
-      value: certificate.placeAndDateOfIssue,
-    },
-  ];
-
+const CertificateInfoTable: React.FC<Props> = ({ certificate }) => {
   return (
     <table className="table table-bordered table-condensed" role="table">
       <thead>
@@ -59,17 +16,63 @@ const CertificateInfoTable: React.FC<CertificateInfoTableProps> = ({
         </tr>
       </thead>
       <tbody>
-        {fields.map((field, index) => (
-          <tr key={index}>
-            <td className="col-sm-2 mobile-label-col">
-              <b>{field.label}</b>
-              <span className="pull-right label label-info">
-                {field.marker}
-              </span>
-            </td>
-            <td className="mobile-value-col">{field.value}</td>
-          </tr>
-        ))}
+        <tr>
+          <td className="mobile-label-col">
+            <b>Exporter Name</b>
+            <span className="pull-right label label-info">1</span>
+          </td>
+          <td className="mobile-value-col">{certificate.exporterName}</td>
+        </tr>
+        <tr>
+          <td className="mobile-label-col">
+            <b>Exporter Address</b>
+            <span className="pull-right label label-info">1</span>
+          </td>
+          <td className="mobile-value-col">{certificate.exporterAddress}</td>
+        </tr>
+        <tr>
+          <td className="mobile-label-col">
+            <b>Consignee Name</b>
+            <span className="pull-right label label-info">2</span>
+          </td>
+          <td className="mobile-value-col">{certificate.consigneeName}</td>
+        </tr>
+        <tr>
+          <td className="mobile-label-col">
+            <b>Consignee Address</b>
+            <span className="pull-right label label-info">2</span>
+          </td>
+          <td className="mobile-value-col">{certificate.consigneeAddress}</td>
+        </tr>
+        <tr>
+          <td className="mobile-label-col">
+            <b>Consignee Country</b>
+            <span className="pull-right label label-info">2</span>
+          </td>
+          <td className="mobile-value-col">{certificate.consigneeCountry}</td>
+        </tr>
+        <tr>
+          <td className="mobile-label-col">
+            <b>Transport Details</b>
+            <span className="pull-right label label-info">4</span>
+          </td>
+          <td className="mobile-value-col">{certificate.transport}</td>
+        </tr>
+        <tr>
+          <td className="mobile-label-col">
+            <b>Country of Origin</b>
+            <span className="pull-right label label-info">3</span>
+          </td>
+          <td className="mobile-value-col">{certificate.origin}</td>
+        </tr>
+        <tr>
+          <td className="mobile-label-col">
+            <b>Place and Date of Issue</b>
+            <br />
+            <span className="label label-info" style={{ marginTop: '5px', display: 'inline-block' }}>8</span>
+          </td>
+          <td className="mobile-value-col">{certificate.placeAndDate}</td>
+        </tr>
       </tbody>
     </table>
   );
