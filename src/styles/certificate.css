@@ -27,7 +27,6 @@ body {
 
 .table thead tr:first-child {
   background-color: #F5F5F5;
-  cursor: pointer;
 }
 
 .table tfoot tr:first-child {
