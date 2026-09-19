@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
@@ -58,14 +58,14 @@ const VerificationPage: React.FC = () => {
     <div className="container-fluid" style={{ marginTop: '20px' }}>
       <div className="panel panel-default" style={{ border: 'none', boxShadow: 'none' }}>
         
-        <div className="panel-heading" style={{ backgroundColor: '#fff', border: 'none', paddingBottom: '0' }}>
+        <div className="panel-heading" style={{ backgroundColor: '#f5f5f5', borderBottom: '1px solid #ddd', borderTop: '1px solid #ddd', padding: '20px 15px' }}>
           <div className="row">
             <div className="col-sm-3 col-xs-6">
               <img src="/logo.png" alt="Logo" style={{ width: '120px' }} />
             </div>
             <div className="col-sm-9 col-xs-12 text-right" style={{ marginTop: '10px' }}>
-              <h4 style={{ fontSize: '18px', margin: '5px 0', color: '#333' }}>Certificate Verification</h4>
-              <h3 style={{ fontSize: '24px', margin: '5px 0' }}>{certificate.certificateNumber}</h3>
+              <h4 style={{ fontSize: '18px', margin: '5px 0', color: '#777' }}>Certificate Verification</h4>
+              <h3 style={{ fontSize: '24px', margin: '5px 0', color: '#333' }}>{certificate.certificateNumber}</h3>
             </div>
           </div>
         </div>
