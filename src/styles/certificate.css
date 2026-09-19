@@ -118,3 +118,22 @@ body {
   border-top: 1px solid #ddd;
   margin-top: 15px;
 }
+.admin-input {
+  width: 100%;
+  border: 1px dashed #ccc;
+  background: #fafafa;
+  padding: 6px;
+  min-height: 32px;
+  font-family: inherit;
+  font-size: inherit;
+  border-radius: 4px;
+}
+.admin-input:focus {
+  border: 1px solid #66afe9;
+  background: #fff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(102,175,233,.5);
+}
+textarea.admin-input {
+  resize: vertical;
+}
