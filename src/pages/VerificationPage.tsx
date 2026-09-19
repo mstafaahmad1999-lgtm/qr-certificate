@@ -64,7 +64,7 @@ const VerificationPage: React.FC = () => {
               <img src="/logo.png" alt="Logo" style={{ width: '120px' }} />
             </div>
             <div className="col-sm-9 col-xs-12 text-right">
-              <h4 style={{ fontSize: '16px', margin: '5px 0', color: '#777' }}>Certificate Verification</h4>
+              <h4 style={{ fontSize: '16px', margin: '5px 0', color: '#777', fontWeight: 'normal' }}>Certificate Verification</h4>
               <h3 style={{ fontSize: '22px', margin: '5px 0', color: '#333' }}>{certificate.certificateNumber}</h3>
             </div>
           </div>

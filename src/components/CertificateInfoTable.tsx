@@ -18,56 +18,56 @@ const CertificateInfoTable: React.FC<Props> = ({ certificate }) => {
       <tbody>
         <tr>
           <td className="mobile-label-col">
-            <b>Exporter Name</b>
+            Exporter Name
             <span className="pull-right label label-info">1</span>
           </td>
           <td className="mobile-value-col">{certificate.exporterName}</td>
         </tr>
         <tr>
           <td className="mobile-label-col">
-            <b>Exporter Address</b>
+            Exporter Address
             <span className="pull-right label label-info">1</span>
           </td>
           <td className="mobile-value-col">{certificate.exporterAddress}</td>
         </tr>
         <tr>
           <td className="mobile-label-col">
-            <b>Consignee Name</b>
+            Consignee Name
             <span className="pull-right label label-info">2</span>
           </td>
           <td className="mobile-value-col">{certificate.consigneeName}</td>
         </tr>
         <tr>
           <td className="mobile-label-col">
-            <b>Consignee Address</b>
+            Consignee Address
             <span className="pull-right label label-info">2</span>
           </td>
           <td className="mobile-value-col">{certificate.consigneeAddress}</td>
         </tr>
         <tr>
           <td className="mobile-label-col">
-            <b>Consignee Country</b>
+            Consignee Country
             <span className="pull-right label label-info">2</span>
           </td>
           <td className="mobile-value-col">{certificate.consigneeCountry}</td>
         </tr>
         <tr>
           <td className="mobile-label-col">
-            <b>Transport Details</b>
+            Transport Details
             <span className="pull-right label label-info">4</span>
           </td>
           <td className="mobile-value-col">{certificate.transport}</td>
         </tr>
         <tr>
           <td className="mobile-label-col">
-            <b>Country of Origin</b>
+            Country of Origin
             <span className="pull-right label label-info">3</span>
           </td>
           <td className="mobile-value-col">{certificate.origin}</td>
         </tr>
         <tr>
           <td className="mobile-label-col">
-            <b>Place and Date of Issue</b>
+            Place and Date of Issue
             <span className="pull-right label label-info">8</span>
           </td>
           <td className="mobile-value-col">{certificate.placeAndDate}</td>
