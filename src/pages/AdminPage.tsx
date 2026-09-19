@@ -169,7 +169,7 @@ const AdminPage: React.FC = () => {
                       <span className="label label-info">8</span>
                     </div>
                   </td>
-                  <td className="mobile-value-col">
+                  <td className="mobile-value-col" style={{ verticalAlign: 'bottom' }}>
                     <input type="text" className="admin-input" value={placeAndDate} onChange={e => setPlaceAndDate(e.target.value)} />
                   </td>
                 </tr>
