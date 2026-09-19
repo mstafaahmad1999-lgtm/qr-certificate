@@ -1,6 +1,5 @@
 import React from "react";
 import { useSearchParams } from "react-router-dom";
-import Header from "../components/Header";
 import CertificateInfoTable from "../components/CertificateInfoTable";
 import GoodsTable from "../components/GoodsTable";
 import { findCertificateByGuid } from "../data/certificates";
