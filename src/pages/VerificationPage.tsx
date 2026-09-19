@@ -56,7 +56,7 @@ const VerificationPage: React.FC = () => {
 
   return (
     <div className="container-fluid" style={{ marginTop: '20px' }}>
-      <div className="panel panel-default" style={{ border: 'none', boxShadow: 'none' }}>
+      <div className="panel panel-default">
         
         <div className="panel-heading" style={{ backgroundColor: '#f5f5f5', borderBottom: '1px solid #ddd', borderTop: '1px solid #ddd', padding: '20px 15px' }}>
           <div className="row">
