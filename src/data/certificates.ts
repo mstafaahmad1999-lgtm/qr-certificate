@@ -35,8 +35,7 @@ export const certificates: Certificate[] = [
       "KIZILTEPE CHAMBER OF COMMERCE AND INDUSTRY / 17.Sep.2026",
     goods: [
       {
-        description:
-          "MAKARNA(%100 EKMEKLİK ADI BUĞDAYDAN) (BÜYÜK DİRSEK)",
+        description: "MAKARNA(%100 EKMEKLİK ADİ BUĞDAYDAN)\n(BÜYÜK DİRSEK)",
         quantity: "54,500.00",
         unit: "KG",
       },

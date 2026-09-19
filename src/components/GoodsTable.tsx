@@ -21,9 +21,9 @@ const GoodsTable: React.FC<GoodsTableProps> = ({ goods }) => {
             <b>Marks, numbers, number and kind of packages, description of goods</b>
             <span className="pull-right label label-info">6</span>
           </td>
-          <td className="text-right" style={{ whiteSpace: 'nowrap' }}>
+          <td>
             <b>Quantity</b>
-            <span className="pull-right label label-info" style={{ marginLeft: '5px' }}>7</span>
+            <span className="pull-right label label-info">7</span>
           </td>
         </tr>
         {goods.map((item, index) => (

@@ -47,12 +47,6 @@ body {
     padding-right: 10px !important;
   }
   
-  /* Keep Quantity column narrow so Description column has space */
-  .table > tbody > tr > td.text-right,
-  .table > thead > tr > th:last-child {
-    width: 1% !important;
-  }
-  
   /* Force exact ratio for the Info Table so word wrapping perfectly matches */
   .mobile-label-col { width: 32% !important; }
   .mobile-value-col { width: 68% !important; }
