@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import type { Certificate } from "../data/certificates";
 
 interface Props {
@@ -7,72 +7,74 @@ interface Props {
 
 const CertificateInfoTable: React.FC<Props> = ({ certificate }) => {
   return (
-    <table className="table table-bordered table-condensed" role="table" style={{ marginBottom: '20px' }}>
+    <table className="table table-bordered table-condensed" role="table">
       <thead>
         <tr>
-          <th colSpan={2} style={{ backgroundColor: '#f9f9f9', padding: '10px 8px', fontSize: '14px', fontWeight: 'normal', color: '#333' }}>
-            BASIC INFORMATION OF CERTIFICATE
+          <th colSpan={2}>
+            <h4>BASIC INFORMATION OF CERTIFICATE</h4>
           </th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td className="mobile-label-col">
-            Exporter Name
+            <b>Exporter Name</b>
             <span className="pull-right label label-info">1</span>
           </td>
           <td className="mobile-value-col">{certificate.exporterName}</td>
         </tr>
         <tr>
           <td className="mobile-label-col">
-            Exporter Address
+            <b>Exporter Address</b>
             <span className="pull-right label label-info">1</span>
           </td>
           <td className="mobile-value-col">{certificate.exporterAddress}</td>
         </tr>
         <tr>
           <td className="mobile-label-col">
-            Consignee Name
+            <b>Consignee Name</b>
             <span className="pull-right label label-info">2</span>
           </td>
           <td className="mobile-value-col">{certificate.consigneeName}</td>
         </tr>
         <tr>
           <td className="mobile-label-col">
-            Consignee Address
+            <b>Consignee Address</b>
             <span className="pull-right label label-info">2</span>
           </td>
           <td className="mobile-value-col">{certificate.consigneeAddress}</td>
         </tr>
         <tr>
           <td className="mobile-label-col">
-            Consignee Country
+            <b>Consignee Country</b>
             <span className="pull-right label label-info">2</span>
           </td>
           <td className="mobile-value-col">{certificate.consigneeCountry}</td>
         </tr>
         <tr>
           <td className="mobile-label-col">
-            Transport Details
+            <b>Transport Details</b>
             <span className="pull-right label label-info">4</span>
           </td>
           <td className="mobile-value-col">{certificate.transport}</td>
         </tr>
         <tr>
           <td className="mobile-label-col">
-            Country of Origin
+            <b>Country of Origin</b>
             <span className="pull-right label label-info">3</span>
           </td>
           <td className="mobile-value-col">{certificate.origin}</td>
         </tr>
         <tr>
           <td className="mobile-label-col">
-            Place and Date of Issue
+            <b>Place and Date of Issue</b>
             <div className="text-right" style={{ marginTop: '4px' }}>
               <span className="label label-info">8</span>
             </div>
           </td>
-          <td className="mobile-value-col" style={{ verticalAlign: 'bottom' }}>{certificate.placeAndDate}</td>
+          <td className="mobile-value-col" style={{ verticalAlign: 'bottom' }}>
+            {certificate.placeAndDate}
+          </td>
         </tr>
       </tbody>
     </table>

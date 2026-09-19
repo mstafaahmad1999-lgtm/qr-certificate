@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 
 const AdminPage: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -74,35 +74,34 @@ const AdminPage: React.FC = () => {
           </div>
         </div>
 
-        <div className="panel panel-default" style={{ border: 'none', boxShadow: 'none' }}>
-          
-          <div className="panel-heading" style={{ backgroundColor: '#fff', border: 'none', paddingBottom: '0' }}>
+        <div className="panel panel-default">
+          <div className="panel-heading">
             <div className="row">
-              <div className="col-sm-3 col-xs-6">
-                <img src="/logo.png" alt="Logo" style={{ width: '120px' }} />
+              <div className="col-sm-3">
+                <img src="/logo.png" alt="Logo" style={{ width: '140px' }} />
               </div>
-              <div className="col-sm-9 col-xs-12 text-right" style={{ marginTop: '10px' }}>
-                <h4 style={{ fontSize: '18px', margin: '5px 0', color: '#333' }}>Certificate Verification</h4>
+              <div className="col-sm-9 text-right">
+                <h4>Certificate Verification</h4>
                 <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
-                  <input type="text" className="admin-input text-right" style={{ fontSize: '24px', fontWeight: 'bold', width: '250px', background: 'transparent', border: 'none', padding: '0' }} value={certNumber} onChange={e => setCertNumber(e.target.value)} />
+                  <input type="text" className="admin-input text-right" style={{ fontSize: '24px', fontWeight: 'bold', width: '250px' }} value={certNumber} onChange={e => setCertNumber(e.target.value)} />
                 </div>
               </div>
             </div>
           </div>
           <div className="panel-body">
             
-            <table className="table table-bordered table-condensed" role="table" style={{ marginBottom: '20px' }}>
+            <table className="table table-bordered table-condensed" role="table">
               <thead>
                 <tr>
-                  <th colSpan={2} style={{ backgroundColor: '#f9f9f9', padding: '10px 8px', fontSize: '14px', fontWeight: 'normal', color: '#333' }}>
-                    BASIC INFORMATION OF CERTIFICATE
+                  <th colSpan={2}>
+                    <h4 style={{ margin: '10px 0', fontSize: '18px', fontWeight: '400' }}>BASIC INFORMATION OF CERTIFICATE</h4>
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td className="mobile-label-col">
-                    Exporter Name
+                    <b>Exporter Name</b>
                     <span className="pull-right label label-info">1</span>
                   </td>
                   <td className="mobile-value-col">
@@ -111,7 +110,7 @@ const AdminPage: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="mobile-label-col">
-                    Exporter Address
+                    <b>Exporter Address</b>
                     <span className="pull-right label label-info">1</span>
                   </td>
                   <td className="mobile-value-col">
@@ -120,7 +119,7 @@ const AdminPage: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="mobile-label-col">
-                    Consignee Name
+                    <b>Consignee Name</b>
                     <span className="pull-right label label-info">2</span>
                   </td>
                   <td className="mobile-value-col">
@@ -129,7 +128,7 @@ const AdminPage: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="mobile-label-col">
-                    Consignee Address
+                    <b>Consignee Address</b>
                     <span className="pull-right label label-info">2</span>
                   </td>
                   <td className="mobile-value-col">
@@ -138,7 +137,7 @@ const AdminPage: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="mobile-label-col">
-                    Consignee Country
+                    <b>Consignee Country</b>
                     <span className="pull-right label label-info">2</span>
                   </td>
                   <td className="mobile-value-col">
@@ -147,7 +146,7 @@ const AdminPage: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="mobile-label-col">
-                    Transport Details
+                    <b>Transport Details</b>
                     <span className="pull-right label label-info">4</span>
                   </td>
                   <td className="mobile-value-col">
@@ -156,7 +155,7 @@ const AdminPage: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="mobile-label-col">
-                    Country of Origin
+                    <b>Country of Origin</b>
                     <span className="pull-right label label-info">3</span>
                   </td>
                   <td className="mobile-value-col">
@@ -165,7 +164,7 @@ const AdminPage: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="mobile-label-col">
-                    Place and Date of Issue
+                    <b>Place and Date of Issue</b>
                     <div className="text-right" style={{ marginTop: '4px' }}>
                       <span className="label label-info">8</span>
                     </div>
@@ -177,22 +176,22 @@ const AdminPage: React.FC = () => {
               </tbody>
             </table>
 
-            <table className="table table-bordered table-condensed" role="table">
+            <table className="table table-bordered table-condensed" role="table" style={{ marginTop: '20px' }}>
               <thead>
                 <tr>
-                  <th colSpan={2} style={{ backgroundColor: '#f9f9f9', padding: '10px 8px', fontSize: '14px', fontWeight: 'normal', color: '#333' }}>
-                    DESCRIPTION OF GOODS
+                  <th colSpan={2}>
+                    <h4 style={{ margin: '10px 0', fontSize: '18px', fontWeight: '400' }}>DESCRIPTION OF GOODS</h4>
                   </th>
                 </tr>
               </thead>
               <tbody>
-                <tr style={{ backgroundColor: '#ffffff' }}>
+                <tr style={{ backgroundColor: '#F9F9F9' }}>
                   <td>
-                    Marks, numbers, number and kind of packages, description of goods
+                    <b>Marks, numbers, number and kind of packages, description of goods</b>
                     <span className="pull-right label label-info">6</span>
                   </td>
                   <td>
-                    Quantity
+                    <b>Quantity</b>
                     <span className="pull-right label label-info">7</span>
                   </td>
                 </tr>
@@ -201,9 +200,9 @@ const AdminPage: React.FC = () => {
                     <textarea className="admin-input" rows={2} value={goodsDescription} onChange={e => setGoodsDescription(e.target.value)} />
                   </td>
                   <td className="text-right">
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '5px' }}>
-                      <input type="text" className="admin-input text-right" style={{ width: '100px' }} value={quantity} onChange={e => setQuantity(e.target.value)} /> 
-                      <input type="text" className="admin-input text-right" style={{ width: '60px' }} value={unit} onChange={e => setUnit(e.target.value)} />
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '5px' }}>
+                      <input type="text" className="admin-input text-right" style={{ width: '70%' }} value={quantity} onChange={e => setQuantity(e.target.value)} /> 
+                      <input type="text" className="admin-input text-right" style={{ width: '30%' }} value={unit} onChange={e => setUnit(e.target.value)} />
                     </div>
                   </td>
                 </tr>
