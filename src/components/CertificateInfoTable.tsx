@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import type { Certificate } from "../data/certificates";
 
 interface Props {
@@ -68,8 +68,9 @@ const CertificateInfoTable: React.FC<Props> = ({ certificate }) => {
         <tr>
           <td className="mobile-label-col">
             <b>Place and Date of Issue</b>
-            <br />
-            <span className="label label-info" style={{ marginTop: '5px', display: 'inline-block' }}>8</span>
+            <div className="text-right" style={{ marginTop: '4px' }}>
+              <span className="label label-info">8</span>
+            </div>
           </td>
           <td className="mobile-value-col">{certificate.placeAndDate}</td>
         </tr>

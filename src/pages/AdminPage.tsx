@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 
 const AdminPage: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -165,8 +165,9 @@ const AdminPage: React.FC = () => {
                 <tr>
                   <td className="mobile-label-col">
                     <b>Place and Date of Issue</b>
-                    <br />
-                    <span className="label label-info" style={{ marginTop: '5px', display: 'inline-block' }}>8</span>
+                    <div className="text-right" style={{ marginTop: '4px' }}>
+                      <span className="label label-info">8</span>
+                    </div>
                   </td>
                   <td className="mobile-value-col">
                     <input type="text" className="admin-input" value={placeAndDate} onChange={e => setPlaceAndDate(e.target.value)} />
