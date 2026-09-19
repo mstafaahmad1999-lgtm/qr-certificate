@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "../firebase";
 
 const AdminPage: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
+  const [isSaving, setIsSaving] = useState(false);
 
   const [guid, setGuid] = useState("NEW-ID-1234");
   const [certNumber, setCertNumber] = useState("E1239335");
@@ -29,9 +32,37 @@ const AdminPage: React.FC = () => {
     }
   };
 
-  const handleCreate = (e: React.FormEvent) => {
+  const handleCreate = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("This will save the certificate!\n\nUsers will be able to view it at:\nmedostobb.org/valid?Guid=" + guid);
+    setIsSaving(true);
+    
+    try {
+      const docRef = doc(db, "certificates", guid);
+      await setDoc(docRef, {
+        guid,
+        certificateNumber: certNumber,
+        exporterName,
+        exporterAddress,
+        consigneeName,
+        consigneeAddress,
+        consigneeCountry,
+        transport,
+        origin,
+        placeAndDate,
+        goods: [
+          {
+            description: goodsDescription,
+            quantity,
+            unit
+          }
+        ]
+      });
+      alert("Certificate successfully saved to the database!\n\nYou can view it live at:\ntr.medostobb.org/valid?Guid=" + guid);
+    } catch (err: any) {
+      alert("Failed to save to database. Make sure you enabled Firestore and set the Rules to Test Mode!\n\nError: " + err.message);
+    }
+    
+    setIsSaving(false);
   };
 
   if (!isAuthenticated) {
@@ -74,34 +105,35 @@ const AdminPage: React.FC = () => {
           </div>
         </div>
 
-        <div className="panel panel-default">
-          <div className="panel-heading">
+        <div className="panel panel-default" style={{ border: 'none', boxShadow: 'none' }}>
+          
+          <div className="panel-heading" style={{ backgroundColor: '#fff', border: 'none', paddingBottom: '0' }}>
             <div className="row">
-              <div className="col-sm-3">
-                <img src="/logo.png" alt="Logo" style={{ width: '140px' }} />
+              <div className="col-sm-3 col-xs-6">
+                <img src="/logo.png" alt="Logo" style={{ width: '120px' }} />
               </div>
-              <div className="col-sm-9 text-right">
-                <h4>Certificate Verification</h4>
+              <div className="col-sm-9 col-xs-12 text-right" style={{ marginTop: '10px' }}>
+                <h4 style={{ fontSize: '18px', margin: '5px 0', color: '#333' }}>Certificate Verification</h4>
                 <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
-                  <input type="text" className="admin-input text-right" style={{ fontSize: '24px', fontWeight: 'bold', width: '250px' }} value={certNumber} onChange={e => setCertNumber(e.target.value)} />
+                  <input type="text" className="admin-input text-right" style={{ fontSize: '24px', fontWeight: 'bold', width: '250px', background: 'transparent', border: 'none', padding: '0' }} value={certNumber} onChange={e => setCertNumber(e.target.value)} />
                 </div>
               </div>
             </div>
           </div>
           <div className="panel-body">
             
-            <table className="table table-bordered table-condensed" role="table">
+            <table className="table table-bordered table-condensed" role="table" style={{ marginBottom: '20px' }}>
               <thead>
                 <tr>
-                  <th colSpan={2}>
-                    <h4 style={{ margin: '10px 0', fontSize: '18px', fontWeight: '400' }}>BASIC INFORMATION OF CERTIFICATE</h4>
+                  <th colSpan={2} style={{ backgroundColor: '#f9f9f9', padding: '10px 8px', fontSize: '14px', fontWeight: 'normal', color: '#333' }}>
+                    BASIC INFORMATION OF CERTIFICATE
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td className="mobile-label-col">
-                    <b>Exporter Name</b>
+                    Exporter Name
                     <span className="pull-right label label-info">1</span>
                   </td>
                   <td className="mobile-value-col">
@@ -110,7 +142,7 @@ const AdminPage: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="mobile-label-col">
-                    <b>Exporter Address</b>
+                    Exporter Address
                     <span className="pull-right label label-info">1</span>
                   </td>
                   <td className="mobile-value-col">
@@ -119,7 +151,7 @@ const AdminPage: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="mobile-label-col">
-                    <b>Consignee Name</b>
+                    Consignee Name
                     <span className="pull-right label label-info">2</span>
                   </td>
                   <td className="mobile-value-col">
@@ -128,7 +160,7 @@ const AdminPage: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="mobile-label-col">
-                    <b>Consignee Address</b>
+                    Consignee Address
                     <span className="pull-right label label-info">2</span>
                   </td>
                   <td className="mobile-value-col">
@@ -137,7 +169,7 @@ const AdminPage: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="mobile-label-col">
-                    <b>Consignee Country</b>
+                    Consignee Country
                     <span className="pull-right label label-info">2</span>
                   </td>
                   <td className="mobile-value-col">
@@ -146,7 +178,7 @@ const AdminPage: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="mobile-label-col">
-                    <b>Transport Details</b>
+                    Transport Details
                     <span className="pull-right label label-info">4</span>
                   </td>
                   <td className="mobile-value-col">
@@ -155,7 +187,7 @@ const AdminPage: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="mobile-label-col">
-                    <b>Country of Origin</b>
+                    Country of Origin
                     <span className="pull-right label label-info">3</span>
                   </td>
                   <td className="mobile-value-col">
@@ -164,7 +196,7 @@ const AdminPage: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="mobile-label-col">
-                    <b>Place and Date of Issue</b>
+                    Place and Date of Issue
                     <div className="text-right" style={{ marginTop: '4px' }}>
                       <span className="label label-info">8</span>
                     </div>
@@ -176,22 +208,22 @@ const AdminPage: React.FC = () => {
               </tbody>
             </table>
 
-            <table className="table table-bordered table-condensed" role="table" style={{ marginTop: '20px' }}>
+            <table className="table table-bordered table-condensed" role="table">
               <thead>
                 <tr>
-                  <th colSpan={2}>
-                    <h4 style={{ margin: '10px 0', fontSize: '18px', fontWeight: '400' }}>DESCRIPTION OF GOODS</h4>
+                  <th colSpan={2} style={{ backgroundColor: '#f9f9f9', padding: '10px 8px', fontSize: '14px', fontWeight: 'normal', color: '#333' }}>
+                    DESCRIPTION OF GOODS
                   </th>
                 </tr>
               </thead>
               <tbody>
-                <tr style={{ backgroundColor: '#F9F9F9' }}>
+                <tr style={{ backgroundColor: '#ffffff' }}>
                   <td>
-                    <b>Marks, numbers, number and kind of packages, description of goods</b>
+                    Marks, numbers, number and kind of packages, description of goods
                     <span className="pull-right label label-info">6</span>
                   </td>
                   <td>
-                    <b>Quantity</b>
+                    Quantity
                     <span className="pull-right label label-info">7</span>
                   </td>
                 </tr>
@@ -200,9 +232,9 @@ const AdminPage: React.FC = () => {
                     <textarea className="admin-input" rows={2} value={goodsDescription} onChange={e => setGoodsDescription(e.target.value)} />
                   </td>
                   <td className="text-right">
-                    <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '5px' }}>
-                      <input type="text" className="admin-input text-right" style={{ width: '70%' }} value={quantity} onChange={e => setQuantity(e.target.value)} /> 
-                      <input type="text" className="admin-input text-right" style={{ width: '30%' }} value={unit} onChange={e => setUnit(e.target.value)} />
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '5px' }}>
+                      <input type="text" className="admin-input text-right" style={{ width: '100px' }} value={quantity} onChange={e => setQuantity(e.target.value)} /> 
+                      <input type="text" className="admin-input text-right" style={{ width: '60px' }} value={unit} onChange={e => setUnit(e.target.value)} />
                     </div>
                   </td>
                 </tr>
@@ -212,8 +244,8 @@ const AdminPage: React.FC = () => {
           </div>
         </div>
 
-        <button type="submit" className="btn btn-success btn-lg btn-block" style={{ marginBottom: '40px' }}>
-          💾 Save Certificate to Database
+        <button type="submit" disabled={isSaving} className="btn btn-success btn-lg btn-block" style={{ marginBottom: '40px' }}>
+          {isSaving ? '"Saving to Database..."' : '"💾 Save Certificate to Database"'}
         </button>
 
       </form>
