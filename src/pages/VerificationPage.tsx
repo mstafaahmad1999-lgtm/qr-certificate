@@ -55,23 +55,27 @@ const VerificationPage: React.FC = () => {
   }
 
   return (
-    <div className="container-fluid" style={{ marginTop: '10px' }}>
+    <div className="container-fluid" style={{ marginTop: '20px' }}>
+      <div className="panel panel-default">
+        
+        <div className="panel-heading" style={{ backgroundColor: '#f5f5f5', borderBottom: '1px solid #ddd', padding: '10px 15px' }}>
+          <div className="row">
+            <div className="col-sm-3 col-xs-6">
+              <img src="/logo.png" alt="Logo" style={{ width: '120px' }} />
+            </div>
+            <div className="col-sm-9 col-xs-12 text-right">
+              <h4 style={{ fontSize: '16px', margin: '5px 0', color: '#777' }}>Certificate Verification</h4>
+              <h3 style={{ fontSize: '22px', margin: '5px 0', color: '#333' }}>{certificate.certificateNumber}</h3>
+            </div>
+          </div>
+        </div>
 
-      {/* Header */}
-      <div className="row" style={{ borderBottom: '1px solid #eee', paddingBottom: '10px', marginBottom: '10px' }}>
-        <div className="col-sm-3 col-xs-4">
-          <img src="/logo.png" alt="Logo" style={{ width: '90px' }} />
+        <div className="panel-body">
+          <CertificateInfoTable certificate={certificate} />
+          <GoodsTable goods={certificate.goods} />
         </div>
-        <div className="col-sm-9 col-xs-8 text-right">
-          <span style={{ fontSize: '14px', color: '#555', display: 'block' }}>Certificate Verification</span>
-          <span style={{ fontSize: '22px', color: '#333', fontWeight: 'bold', display: 'block' }}>{certificate.certificateNumber}</span>
-        </div>
+        
       </div>
-
-      {/* Tables */}
-      <CertificateInfoTable certificate={certificate} />
-      <GoodsTable goods={certificate.goods} />
-
     </div>
   );
 };
