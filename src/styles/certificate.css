@@ -137,3 +137,9 @@ body {
 textarea.admin-input {
   resize: vertical;
 }
+.mobile-label-col {
+  width: 32% !important;
+}
+.mobile-value-col {
+  width: 68% !important;
+}
