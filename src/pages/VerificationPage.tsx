@@ -58,14 +58,14 @@ const VerificationPage: React.FC = () => {
     <div className="container-fluid" style={{ marginTop: '20px' }}>
       <div className="panel panel-default">
         
-        <div className="panel-heading" style={{ backgroundColor: '#f5f5f5', borderBottom: '1px solid #ddd', borderTop: '1px solid #ddd', padding: '20px 15px' }}>
+        <div className="panel-heading" style={{ backgroundColor: '#f5f5f5', borderBottom: '1px solid #ddd', padding: '10px 15px' }}>
           <div className="row">
             <div className="col-sm-3 col-xs-6">
               <img src="/logo.png" alt="Logo" style={{ width: '120px' }} />
             </div>
-            <div className="col-sm-9 col-xs-12 text-right" style={{ marginTop: '10px' }}>
-              <h4 style={{ fontSize: '18px', margin: '5px 0', color: '#777' }}>Certificate Verification</h4>
-              <h3 style={{ fontSize: '24px', margin: '5px 0', color: '#333' }}>{certificate.certificateNumber}</h3>
+            <div className="col-sm-9 col-xs-12 text-right">
+              <h4 style={{ fontSize: '16px', margin: '5px 0', color: '#777' }}>Certificate Verification</h4>
+              <h3 style={{ fontSize: '22px', margin: '5px 0', color: '#333' }}>{certificate.certificateNumber}</h3>
             </div>
           </div>
         </div>
