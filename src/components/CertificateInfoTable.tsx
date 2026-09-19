@@ -68,13 +68,9 @@ const CertificateInfoTable: React.FC<Props> = ({ certificate }) => {
         <tr>
           <td className="mobile-label-col">
             <b>Place and Date of Issue</b>
-            <div className="text-right" style={{ marginTop: '4px' }}>
-              <span className="label label-info">8</span>
-            </div>
+            <span className="pull-right label label-info">8</span>
           </td>
-          <td className="mobile-value-col" style={{ verticalAlign: 'bottom' }}>
-            {certificate.placeAndDate}
-          </td>
+          <td className="mobile-value-col">{certificate.placeAndDate}</td>
         </tr>
       </tbody>
     </table>

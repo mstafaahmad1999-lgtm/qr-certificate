@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
@@ -197,11 +197,9 @@ const AdminPage: React.FC = () => {
                 <tr>
                   <td className="mobile-label-col">
                     Place and Date of Issue
-                    <div className="text-right" style={{ marginTop: '4px' }}>
-                      <span className="label label-info">8</span>
-                    </div>
+                    <span className="pull-right label label-info">8</span>
                   </td>
-                  <td className="mobile-value-col" style={{ verticalAlign: 'bottom' }}>
+                  <td className="mobile-value-col">
                     <input type="text" className="admin-input" value={placeAndDate} onChange={e => setPlaceAndDate(e.target.value)} />
                   </td>
                 </tr>
