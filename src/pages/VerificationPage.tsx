@@ -35,11 +35,7 @@ const VerificationPage: React.FC = () => {
   }, [guid]);
 
   if (loading) {
-    return (
-      <div className="container-fluid" style={{ marginTop: '20px', textAlign: 'center' }}>
-        Loading certificate...
-      </div>
-    );
+    return null;
   }
 
   if (!guid || !certificate) {
